@@ -18,7 +18,7 @@ td {
 th {
   font-size: 24px;
   padding: 20px; /* More padding for a better header appearance */
-  text-align: left; /* Aligns text to the left */
+  text-align: center; /* Aligns text to the left */
 }
 
 tr {

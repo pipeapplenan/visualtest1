@@ -1,18 +1,13 @@
 import React from "react";
 import "./App.css";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Outlet,
-} from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Outlet } from "react-router-dom";
 import Timeline from "./components/Timeline";
 import Carousel from "./components/Carousel";
 import PhotoGallery from "./components/PhotoGallery";
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.REACT_APP_BASENAME}>
       <div className="App">
         <header className="App-header"></header>
         <Routes>
@@ -29,6 +24,7 @@ function Layout() {
   return (
     <div>
       <Timeline />
+      <Outlet />
     </div>
   );
 }
