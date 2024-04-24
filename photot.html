@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      table {
+        width: 50%;
+        border-collapse: collapse;
+        margin: 50px auto;
+      }
+
+      th {
+        background-color: #f2f2f2;
+        font-size: 24px;
+        padding: 10px;
+      }
+      td {
+        width: 100%;
+        max-height: 200px;
+        overflow-y: scroll;
+        display: block;
+      }
+
+      td img {
+        width: 100px; /* Set the size of thumbnails */
+        padding: 15px;
+        transition: transform 0.2s; /* Smooth transformation for scaling */
+      }
+
+      td img:hover {
+        transform: scale(3); /* Scale images on hover */
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <!-- Row for category 'People' -->
+      <tr>
+        <th>People</th>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="/COMPX532DataVisualization/visualphoto2/src/images/earth.jpg"
+            alt="Person 1"
+          />
+          <img
+            src="/COMPX532DataVisualization/visualphoto2/src/images/earth2.jpg"
+            alt="Person 2"
+          />
+          <img
+            src="/COMPX532DataVisualization/visualphoto2/src/images/earth2.jpg"
+            alt="Person 2"
+          />
+          <img
+            src="/COMPX532DataVisualization/visualphoto2/src/images/earth2.jpg"
+            alt="Person 2"
+          />
+          <img
+            src="/COMPX532DataVisualization/visualphoto2/src/images/earth2.jpg"
+            alt="Person 2"
+          />
+          <img
+            src="/COMPX532DataVisualization/visualphoto2/src/images/earth2.jpg"
+            alt="Person 2"
+          />
+          <img
+            src="/COMPX532DataVisualization/visualphoto2/src/images/earth2.jpg"
+            alt="Person 2"
+          />
+          <img
+            src="/COMPX532DataVisualization/visualphoto2/src/images/earth2.jpg"
+            alt="Person 2"
+          />
+          <img
+            src="/COMPX532DataVisualization/visualphoto2/src/images/earth2.jpg"
+            alt="Person 2"
+          />
+          <img
+            src="/COMPX532DataVisualization/visualphoto2/src/images/earth2.jpg"
+            alt="Person 2"
+          />
+          <img
+            src="/COMPX532DataVisualization/visualphoto2/src/images/earth2.jpg"
+            alt="Person 2"
+          />
+          <img
+            src="/COMPX532DataVisualization/visualphoto2/src/images/earth2.jpg"
+            alt="Person 2"
+          />
+          <img
+            src="/COMPX532DataVisualization/visualphoto2/src/images/earth2.jpg"
+            alt="Person 2"
+          /><img
+            src="/COMPX532DataVisualization/visualphoto2/src/images/earth2.jpg"
+            alt="Person 2"
+          /><img
+            src="/COMPX532DataVisualization/visualphoto2/src/images/earth2.jpg"
+            alt="Person 2"
+          /><img
+            src="/COMPX532DataVisualization/visualphoto2/src/images/earth2.jpg"
+            alt="Person 2"
+          /><img
+            src="/COMPX532DataVisualization/visualphoto2/src/images/earth2.jpg"
+            alt="Person 2"
+          /><img
+            src="/COMPX532DataVisualization/visualphoto2/src/images/earth2.jpg"
+            alt="Person 2"
+          /><img
+            src="/COMPX532DataVisualization/visualphoto2/src/images/earth2.jpg"
+            alt="Person 2"
+          /><img
+            src="/COMPX532DataVisualization/visualphoto2/src/images/earth2.jpg"
+            alt="Person 2"
+          />
+          <!-- Add more images as needed -->
+        </td>
+      </tr>
+
+      <!-- Row for category 'Food' -->
+      <tr>
+        <th>Food</th>
+      </tr>
+      <tr>
+        <td>
+          <img src="path_to_food1.jpg" alt="Food 1" />
+          <img src="path_to_food2.jpg" alt="Food 2" />
+          <!-- Add more images as needed -->
+        </td>
+      </tr>
+
+      <!-- Row for category 'Landscapes' -->
+      <tr>
+        <th>Landscapes</th>
+      </tr>
+      <tr>
+        <td>
+          <img src="path_to_landscape1.jpg" alt="Landscape 1" />
+          <img src="path_to_landscape2.jpg" alt="Landscape 2" />
+          <!-- Add more images as needed -->
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

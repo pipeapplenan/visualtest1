@@ -1,0 +1,45 @@
+/* TagCloud.css */
+
+.tag-cloud-container {
+  position: absolute;
+  top: -650px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px; /* 调整容器大小 */
+  overflow: hidden; /* 不允许内容溢出容器 */
+  background-color: transparent;
+  z-index: 1; /* 保证它们在EarthBackground之上 */
+}
+.tags-wrapper {
+  position: relative; /* 这允许 tags-wrapper 内的内容流动 */
+  max-width: 700px; /* 限制最大宽度 */
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.tag {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  display: inline-block; /* 使得标签之间可以有空间，并且可以自动换行 */
+  white-space: nowrap; /* 防止标签内的文字换行 */
+}
+
+.tag:hover {
+  transform: scale(1.1);
+}

@@ -1,0 +1,50 @@
+table {
+  width: 100%; /* Adjusted width for better table display */
+  border-collapse: separate; /* Allows spacing between rows */
+  margin: -900px auto; /* Centered and with appropriate margin */
+  background-color: rgba(0, 0, 30, 0.6); /* More transparent background */
+  color: #ccc; /* Light grey text to contrast with the dark background */
+  border-radius: 10px; /* Rounded corners for the table */
+  overflow: hidden; /* Ensures the border radius clips content */
+}
+
+th,
+td {
+  border: 2px solid #555; /* Solid border for headers and cells */
+  border-radius: 10px; /* Rounded corners for headers and cells */
+  margin: 10px 0; /* Margin for spacing between rows */
+}
+
+th {
+  font-size: 24px;
+  padding: 20px; /* More padding for a better header appearance */
+  text-align: left; /* Aligns text to the left */
+}
+
+tr {
+  margin-bottom: 30px; /* Adds space between categories */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Adds shadow for depth */
+}
+
+td {
+  width: 100%;
+  max-height: 400px; /* Increased height for better visibility */
+  overflow-y: auto; /* Keeps the scroll bar */
+  display: block;
+  background-color: transparent; /* Fully transparent to showcase App background */
+  padding: 10px; /* Consistent padding around images */
+}
+
+td img {
+  width: 150px; /* Larger thumbnails */
+  margin: 10px; /* Space between images */
+  border: 2px solid #555; /* Border for images */
+  border-radius: 5px; /* Rounded corners for images */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transformations */
+}
+
+td img:hover {
+  transform: scale(1.1); /* Subtle scale */
+  cursor: pointer;
+  box-shadow: 0 0 20px #fff; /* White glow effect */
+}

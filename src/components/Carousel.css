@@ -1,0 +1,61 @@
+body {
+  perspective: 1000px;
+}
+
+.carousel {
+  width: 600px;
+  height: 300px;
+  margin: -900px auto;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: carousel-rotate 20s infinite linear;
+}
+.carousel:hover {
+  animation-play-state: paused;
+  cursor: pointer;
+}
+.carousel .item {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: center;
+  transition: transform 0.5s;
+}
+.carousel .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.carousel .item:nth-child(1) {
+  transform: translateZ(300px);
+}
+.carousel .item:nth-child(2) {
+  transform: rotateY(60deg) translateZ(300px);
+}
+.carousel .item:nth-child(3) {
+  transform: rotateY(120deg) translateZ(300px);
+}
+.carousel .item:nth-child(4) {
+  transform: rotateY(180deg) translateZ(300px);
+}
+.carousel .item:nth-child(5) {
+  transform: rotateY(240deg) translateZ(300px);
+}
+.carousel .item:nth-child(6) {
+  transform: rotateY(300deg) translateZ(300px);
+}
+@keyframes carousel-rotate {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(420deg);
+  }
+}
+.text-overlay {
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}

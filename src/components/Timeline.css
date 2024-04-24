@@ -1,0 +1,69 @@
+.timeline-container {
+  position: fixed;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+  padding: 20px 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /* 将布局改为垂直方向 */
+  z-index: 999;
+  background-color: transparent;
+  z-index: 1; /* 保证它们在EarthBackground之上 */
+}
+
+.timeline-line {
+  position: relative;
+  width: calc(100% - 60px); /* 留出空间放置箭头 */
+  height: 6px; /* 加粗线条 */
+  background: linear-gradient(to right, #ffcccc, #ff6666);
+}
+
+.arrow-left::before,
+.arrow-right::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-style: solid;
+  border-color: transparent; /* 明确设为透明，避免继承其他颜色 */
+}
+
+.arrow-left::before {
+  border-width: 15px 30px 15px 0;
+  border-right-color: #ff6666; /* 只为右边框设定颜色（粉色箭头） */
+  left: 0;
+}
+
+.arrow-right::before {
+  border-width: 15px 0 15px 30px;
+  border-left-color: #ff6666; /* 只为左边框设定颜色（粉色箭头） */
+  right: 0;
+}
+
+.timestamps {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  top: 20px; /* 将时间戳下移，使之位于线条下方 */
+  margin-top: 50px;
+}
+
+.timestamp-button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 2em;
+}
+
+.timestamp-button:hover {
+  background-color: #ff6666; /* 鼠标悬停时的背景颜色 */
+  color: #fff; /* 鼠标悬停时的文字颜色 */
+  border-radius: 4px; /* 给按钮添加圆角 */
+  transition: all 0.3s ease; /* 平滑的过渡效果 */
+}
