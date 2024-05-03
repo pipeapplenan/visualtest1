@@ -1,11 +1,23 @@
+.table-container {
+  width: 100%;
+}
+
 table {
   width: 100%;
-  border-collapse: separate;
-  margin: -900px auto;
+
+  border-collapse: collapse;
+  margin: -764px auto;
   background-color: rgba(0, 0, 30, 0.6);
   color: #ccc;
   border-radius: 10px;
-  overflow: hidden;
+}
+@media (max-width: 600px) {
+  table,
+  th,
+  td {
+    font-size: 12px; /* 较小的字体大小 */
+    padding: 5px; /* 较小的内边距 */
+  }
 }
 
 th,
@@ -29,10 +41,10 @@ tr {
 td {
   display: block;
   max-width: 1800px;
-  max-height: 400px;
-  overflow-x: scroll;
-  overflow-y: auto; /* 修改为scroll */
-  white-space: nowrap;
+  max-height: 200px;
+  overflow-x: auto;
+  overflow-y: scroll; /* 修改为scroll */
+  white-space: wrap;
   padding: 10px;
   box-sizing: border-box;
   border: 2px solid #555;
@@ -47,7 +59,7 @@ td img {
   border-radius: 5px;
   transition: transform 0.3s, box-shadow 0.3s;
   max-width: 100px;
-  height: auto; /* 让高度自适应，以保持图片比例 */
+  height: 100px; /* 让高度自适应，以保持图片比例 */
   display: inline-block;
 }
 

@@ -3,44 +3,44 @@ import "./Carousel.css"; // Assuming you have extracted CSS into a separate file
 import { useNavigate, Route, Routes } from "react-router-dom";
 import PhotoGallery from "./PhotoGallery";
 
-const image = require("../images/earth2.jpg");
-const image2 = require("../images/earth.jpg");
-const image3 = require("../images/IMG_2183.JPG");
-const image4 = require("../images/IMG_2207.JPG");
-const image5 = require("../images/IMG_2198.JPG");
-const image6 = require("../images/IMG_2214.JPG");
+const image = require("../images/tauranga.jpg");
+const image2 = require("../images/taupo.jpg");
+const image3 = require("../images/archeteck11.jpg");
+const image4 = require("../images/archeteck3.jpg");
+const image5 = require("../images/hamiltonlake.jpg");
+const image6 = require("../images/raglan.jpg");
 
 const Carousel = () => {
   const items = [
     {
       id: 1,
       imgSrc: image,
-      label: "Tauranga",
+      label: "Tauranga(120)",
     },
     {
       id: 2,
       imgSrc: image2,
-      label: "Taopo",
+      label: "Taopo(344)",
     },
     {
       id: 3,
       imgSrc: image3,
-      label: "Wellington",
+      label: "Wellington(233)",
     },
     {
       id: 4,
       imgSrc: image4,
-      label: "Auckland",
+      label: "Auckland(122)",
     },
     {
       id: 5,
       imgSrc: image5,
-      label: "Hamilton",
+      label: "Hamilton(455)",
     },
     {
       id: 6,
       imgSrc: image6,
-      label: "Raglan",
+      label: "Raglan(214)",
     },
   ];
   const navigate = useNavigate();
