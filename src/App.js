@@ -1,6 +1,12 @@
 import React from "react";
 import "./App.css";
-import { HashRouter, Routes, Route, Outlet } from "react-router-dom"; // 注意这里的导入
+import {
+  HashRouter,
+  Routes,
+  Route,
+  Outlet,
+  useLocation,
+} from "react-router-dom"; // 注意这里的导入
 import Timeline from "./components/Timeline";
 import Carousel from "./components/Carousel";
 import PhotoGallery from "./components/PhotoGallery";
@@ -10,7 +16,7 @@ function App() {
     <HashRouter>
       {" "}
       <div className="App">
-        <header className="App-header"></header>
+        <Header />
         <Routes>
           {" "}
           <Route path="/" element={<Layout />} />
@@ -20,6 +26,14 @@ function App() {
       </div>
     </HashRouter>
   );
+}
+function Header() {
+  const location = useLocation(); // 使用 useLocation 钩子获取当前路由信息
+  const headerClass =
+    location.pathname === "/photogallery"
+      ? "App-header App-header-small"
+      : "App-header";
+  return <header className={headerClass}></header>;
 }
 
 function Layout() {

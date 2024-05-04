@@ -47,6 +47,7 @@ const PhotoGallery = () => {
   const closeModal = () => {
     setSelectedImg(null);
   };
+  const alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
   const categories = [
     {
@@ -217,53 +218,54 @@ const PhotoGallery = () => {
   ];
 
   return (
-    <div className="table-container">
-      <table>
-        {categories.map((category) => (
-          <React.Fragment key={category.name}>
-            <tr>
-              <th>{category.name}</th>
-            </tr>
-            <tr>
-              <td>
-                {category.images.map((src, index) => (
-                  <img
-                    key={index}
-                    src={src}
-                    alt={category.name}
-                    onClick={() => openModal(src)}
-                  />
-                ))}
-              </td>
-            </tr>
-          </React.Fragment>
+    <div className="gallery-container">
+      <div className="index-nav">
+        <span>Index:</span>
+        {alphabets.map((letter, index) => (
+          <a
+            key={index}
+            href={`#${letter}`}
+            className="index-link"
+            onClick={(e) => {
+              e.preventDefault();
+              const element = document.getElementById(letter);
+              if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+          >
+            {letter}
+          </a>
         ))}
-      </table>
+      </div>
+      <div className="table-container">
+        <table>
+          {categories.map((category) => (
+            <React.Fragment key={category.name}>
+              <tr id={category.name[0]}>
+                <th>{category.name}</th>
+              </tr>
+              <tr>
+                <td>
+                  {category.images.map((src, index) => (
+                    <img
+                      key={index}
+                      src={src}
+                      alt={category.name}
+                      onClick={() => openModal(src)}
+                    />
+                  ))}
+                </td>
+              </tr>
+            </React.Fragment>
+          ))}
+        </table>
+      </div>
       {selectedImg && (
         <div className="modal" onClick={closeModal}>
           <img src={selectedImg} alt="Enlarged" className="enlarged-img" />
         </div>
       )}
-
-      <style jsx>
-        {`
-          .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-          .enlarged-img {
-            max-width: 90%;
-            max-height: 50%;
-          }
-        `}
-      </style>
     </div>
   );
 };
