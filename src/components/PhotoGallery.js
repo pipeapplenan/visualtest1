@@ -36,6 +36,23 @@ import image33 from "../images/people3.jpg";
 import image34 from "../images/people4.jpg";
 import image35 from "../images/tauranga.jpg";
 import image36 from "../images/tauranga1.jpg";
+import image37 from "../images/tree1.jpg";
+import image38 from "../images/tree2.jpg";
+import image39 from "../images/tree3.jpg";
+import image40 from "../images/tree4.jpg";
+import image41 from "../images/tree5.jpg";
+import image42 from "../images/tree6.jpg";
+import image43 from "../images/tree7.jpg";
+import image44 from "../images/tree8.jpg";
+import image45 from "../images/tree9.jpg";
+import image46 from "../images/tree10.jpg";
+import image47 from "../images/tree11.jpg";
+import image48 from "../images/people5.jpg";
+import image49 from "../images/others1.jpg";
+import image50 from "../images/others2.jpg";
+import image51 from "../images/others3.jpg";
+import image52 from "../images/others4.jpg";
+import image53 from "../images/others6.jpg";
 
 const PhotoGallery = () => {
   const [selectedImg, setSelectedImg] = useState(null);
@@ -57,26 +74,32 @@ const PhotoGallery = () => {
         image32,
         image33,
         image34,
+        image48,
         image31,
         image32,
         image33,
         image34,
+        image48,
         image31,
         image32,
         image33,
         image34,
+        image48,
         image31,
         image32,
         image33,
         image34,
+        image48,
         image31,
         image32,
         image33,
         image34,
+        image48,
         image31,
         image32,
         image33,
         image34,
+        image48,
         image31,
         image32,
         image33,
@@ -215,12 +238,71 @@ const PhotoGallery = () => {
         // Add more image paths as needed
       ],
     },
+    {
+      name: "Trees",
+      images: [
+        image37,
+        image38,
+        image39,
+        image40,
+        image41,
+        image42,
+        image43,
+        image44,
+        image45,
+        image46,
+        image47,
+        image37,
+        image38,
+        image39,
+        image40,
+        image41,
+        image42,
+        image43,
+        image44,
+        image45,
+        image46,
+        image47,
+        image37,
+        image38,
+        image39,
+        image40,
+        image41,
+        image42,
+        image43,
+        image44,
+        image45,
+        image46,
+        image47,
+        // Add more image paths as needed
+      ],
+    },
+    {
+      name: "Others",
+      images: [
+        image49,
+        image50,
+        image51,
+        image52,
+        image53,
+        image49,
+        image50,
+        image51,
+        image52,
+        image53,
+        image49,
+        image50,
+        image51,
+        image52,
+        image53,
+      ],
+    },
   ];
 
   return (
     <div className="gallery-container">
       <div className="index-nav">
-        <span>Index:</span>
+        <span style={{ fontSize: "20px", color: "blue" }}>Index:</span>
         {alphabets.map((letter, index) => (
           <a
             key={index}
@@ -230,7 +312,11 @@ const PhotoGallery = () => {
               e.preventDefault();
               const element = document.getElementById(letter);
               if (element) {
-                element.scrollIntoView({ behavior: "smooth" });
+                element.scrollIntoView({
+                  behavior: "smooth",
+                  block: "center",
+                  inline: "nearest",
+                });
               }
             }}
           >
