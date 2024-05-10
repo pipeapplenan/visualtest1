@@ -312,10 +312,17 @@ const PhotoGallery = () => {
               e.preventDefault();
               const element = document.getElementById(letter);
               if (element) {
-                element.scrollIntoView({
+                // 获取目标元素的坐标
+                const elementPosition =
+                  element.getBoundingClientRect().top + window.scrollY;
+
+                // 计算偏移量（目标元素显示在屏幕中间偏上）
+                const offset = window.innerHeight * 0.15; // 偏移量，距离顶部占屏幕高度的25%
+
+                // 滚动到目标位置（偏移量向上偏移）
+                window.scrollTo({
+                  top: elementPosition - offset,
                   behavior: "smooth",
-                  block: "center",
-                  inline: "nearest",
                 });
               }
             }}
