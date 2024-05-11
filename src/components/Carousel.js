@@ -1,7 +1,7 @@
 import React from "react";
 import "./Carousel.css"; // Assuming you have extracted CSS into a separate file
-import { useNavigate, Route, Routes } from "react-router-dom";
-import PhotoGallery from "./PhotoGallery";
+import { useNavigate } from "react-router-dom";
+import { div } from "three/examples/jsm/nodes/Nodes.js";
 
 const image = require("../images/tauranga.jpg");
 const image2 = require("../images/taupo.jpg");
@@ -47,19 +47,31 @@ const Carousel = () => {
   const handleImgClick = () => {
     navigate("/photogallery"); // 点击后跳转到PhotoGallery页面
   };
+  const handleBackClick = () => {
+    navigate(-1); // 返回上一级
+  };
 
   return (
-    <div className="carousel">
-      {items.map((item) => (
-        <div key={item.id} className="item">
-          <p className="text-overlay">{item.label}</p>
-          <img
-            src={item.imgSrc}
-            alt={item.label}
-            onClick={() => handleImgClick()}
-          />
+    <div>
+      <div className="backbutton-layout">
+        <button className="back-button" onClick={handleBackClick}>
+          Return to previous page
+        </button>
+      </div>
+      <div className="carousel-container">
+        <div className="carousel">
+          {items.map((item) => (
+            <div key={item.id} className="item">
+              <p className="text-overlay">{item.label}</p>
+              <img
+                src={item.imgSrc}
+                alt={item.label}
+                onClick={() => handleImgClick()}
+              />
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
   );
 };

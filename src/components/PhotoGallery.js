@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./PhotoGallery.css";
+import { useNavigate } from "react-router-dom";
 import image1 from "../images/animal1.jpg";
 import image2 from "../images/animal2.jpg";
 import image3 from "../images/animal3.jpg";
@@ -56,6 +57,7 @@ import image53 from "../images/others6.jpg";
 
 const PhotoGallery = () => {
   const [selectedImg, setSelectedImg] = useState(null);
+  const navigate = useNavigate();
 
   const openModal = (src) => {
     setSelectedImg(src);
@@ -64,6 +66,11 @@ const PhotoGallery = () => {
   const closeModal = () => {
     setSelectedImg(null);
   };
+
+  const handleBackClick = () => {
+    navigate(-1); // 使用 navigate(-1) 返回上一级
+  };
+
   const alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
   const categories = [
@@ -302,7 +309,13 @@ const PhotoGallery = () => {
   return (
     <div className="gallery-container">
       <div className="index-nav">
-        <span style={{ fontSize: "20px", color: "blue" }}>Index:</span>
+        <span style={{ fontSize: "20px", color: "blue" }}>
+          <button style={{ marginRight: "50px" }} onClick={handleBackClick}>
+            Return to previous page
+          </button>
+          Index:
+        </span>
+
         {alphabets.map((letter, index) => (
           <a
             key={index}
